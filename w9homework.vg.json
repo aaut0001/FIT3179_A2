@@ -1,8 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 800,
-    "height": 600,
-    "title": "Airport Dot Plot on Map",
+    "width": 1000,
+    "height": 800,
+    "title": "Airport Density Dot Plot",
     "projection": {
         "type": "equalEarth"
     },
@@ -17,7 +17,7 @@
             },
             "mark": {
                 "type": "geoshape",
-                "fill": "lightgray",
+                "fill": "darkgray",
                 "stroke": "white"
             }
         },
@@ -26,8 +26,8 @@
                 "url": "https://raw.githubusercontent.com/aaut0001/FIT3179_A2/main/airport_info.csv"
             },
             "mark": {
-                "type": "circle", 
-                "tooltip": {"content": "data"}
+                "type": "circle",
+                "color": "red"
             },
             "encoding": {
                 "longitude": {
@@ -39,17 +39,14 @@
                     "type": "quantitative"
                 },
                 "size": {
-                    "field": "Frequency", 
-                    "type": "quantitative",
-                    "title": "Frequency of Airport", 
-                    "scale": {"domain": [0,200]}
-                },
-                "color": {
-                    "field": "Airport Name",
-                    "type": "nominal", 
-                    "title": "Airport", 
-                    "scale": {"scheme": "blues"}
-                }
+                    "value": 10
+                }, 
+                "tooltip": [
+                    {"field": "Airport Name", "title": "Airport Name"},
+                    {"field": "Frequency", "title": "Frequency"},
+                    {"field": "Latitude", "title": "Latitude"},
+                    {"field": "Longitude", "title": "Longitude"}
+                ]
             }
         }
     ]
