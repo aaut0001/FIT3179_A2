@@ -6,37 +6,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <!-- import Vega & Vega-Lite -->
-    <script src=""https://cdn.jsdelivr.net/npm/vega@5.20.2></script>
-    <script src="https://cdn.jsdelivr.net.npm/vega-lite@5.1.0"></script>
+    <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
-    
-    <!-- import pure.css -->
-    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
-        integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ"
-        crossorigin="anonymous">
-    <meta name="viewport" content="width=device-width, initial-scale">
 
-    <!-- Google Font -->
+    <!-- Import pure.css -->
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+        integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open-Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 
     <!-- CSS file -->
     <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
 
 </head>
+
 <body>
-    
+
     <div class="page">
         <!-- pure grid group -->
         <div class="pure-g">
             <div class="pure-u-1-1">
-                
+                <h1>Visualisation for Homework Week 9</h1>
             </div>
-
         </div>
+        <!-- end pure grid group -->
+
+        <div class="pure-g">
+            <div class="pure-u-1-2">
+                <div class="description description-left">
+                    <h2>Insights into the Density Dot Plot</h2>
+                    <p>the map shows two insightful pieces.
+                        The first one is a density dot plot of all the airports in the world
+                        where there have been flights arriving and departing.
+
+                        Secondly, we get to see the darker dots that indicate airports with a
+                        higher frequency of arrivals and departures.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Move the graph container below the text -->
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                <div id="vis1" class="vis-container"></div>
+            </div>
+        </div>
+
     </div>
-    
+    <!-- end page -->
+
+    <script type="text/javascript">
+        var specVis1 = "./w9homework.vg.json";
+        vegaEmbed('#vis1', specVis1, { "actions": false });
+    </script>
+
 </body>
+
 </html>
