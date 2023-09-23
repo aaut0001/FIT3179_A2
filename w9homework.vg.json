@@ -1,8 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 1000,
-    "height": 800,
-    "title": "Airport Density Dot Plot",
+    "width": 1200,
+    "height": 1000,
+    "title": "Airport Density Dot Plot (2023)",
     "projection": {
         "type": "equalEarth"
     },
@@ -39,14 +39,20 @@
                     "type": "quantitative"
                 },
                 "size": {
-                    "value": 10
+                    "value": 15
                 }, 
                 "tooltip": [
                     {"field": "Airport Name", "title": "Airport Name"},
                     {"field": "Frequency", "title": "Frequency"},
                     {"field": "Latitude", "title": "Latitude"},
                     {"field": "Longitude", "title": "Longitude"}
-                ]
+                ],
+                "color": {
+                    "field": "Frequency",
+                    "type": "quantitative",
+                    "title": "Number of Visits",
+                    "scale": {"scheme": "reds"}
+                }
             }
         }
     ]
