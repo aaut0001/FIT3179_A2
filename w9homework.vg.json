@@ -71,7 +71,8 @@
                     "type": "quantitative",
                     "title": "Number of Visits",
                     "scale": {
-                        "scheme": "reds"
+                        "domain": [0, 10, 20],
+                        "range": ["pink", "red"]
                     }
                 }
             }
